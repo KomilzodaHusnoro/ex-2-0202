@@ -34,6 +34,27 @@ namespace homeWork1
                 addedBook.bContent.Show();
                 // не получается нернуть белый цвет в консоле
             }
+            {// 
+                Academy preview = new Academy();
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                Console.Write("Wellcome to Alif Coding Academy! \n I will help you adapt here. \n How many people do you see? \n");
+                int numberOfPeople = int.Parse(Console.ReadLine());
+                if (numberOfPeople == 1 || numberOfPeople == 2) 
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    preview.manager();
+                } 
+                if (numberOfPeople > 2 && numberOfPeople < 20)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    preview.noLesson();
+                }
+                if (numberOfPeople >= 20)
+                {
+                    Console.ForegroundColor = ConsoleColor.Gray;
+                    preview.lesson();
+                }
+            }
 
         }
     }
@@ -69,7 +90,7 @@ namespace homeWork1
         public string booksTitle { get; set; }
         public void Show()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Book's title:");
             Console.ForegroundColor = ConsoleColor.DarkBlue; 
             Console.WriteLine(booksTitle);
@@ -82,7 +103,7 @@ namespace homeWork1
         public string booksAuthor { get; set; }
         public void Show()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine("Author's name:");
             Console.ForegroundColor = ConsoleColor.DarkBlue; 
             Console.WriteLine(booksAuthor);
@@ -93,10 +114,28 @@ namespace homeWork1
         public string booksContent { get; set; }
         public void Show()
         {
-            Console.ForegroundColor = ConsoleColor.Green; 
+            Console.ForegroundColor = ConsoleColor.DarkYellow; 
             Console.WriteLine("Book's content:");
             Console.ForegroundColor = ConsoleColor.DarkBlue; 
             Console.WriteLine(booksContent);                   
         }
     }
+    class Academy
+    {
+        public void lesson ()
+        {
+            Console.Write("keep silence There is a lesson!");
+        }
+        public void noLesson ()
+        {
+             Console.Write("You can do whatever you want! There is no lesson)");
+           
+        }
+        public void manager ()
+        {
+            Console.Write("Use the Internet only for its intended purpose!!! Do not forget the manifest of the programmer!");
+        }
+    }
+
+        
 }
