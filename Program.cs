@@ -6,6 +6,7 @@ namespace homeWork1
     {
         static void Main(string[] args)
         {
+            { // ex #2
             Console.Write("Enter first side of rectangle: ");
             double side1 = Convert.ToDouble(Console.ReadLine());
             Console.Write("Enter second side of rectangle: ");
@@ -15,6 +16,24 @@ namespace homeWork1
             Pryamougolnik.AreaCulk(side1, side2);
             Console.WriteLine(Pryamougolnik.Perimeter);
             Console.WriteLine(Pryamougolnik.Area);
+            }
+            { // ex #3
+                Book addedBook = new Book();
+
+                Console.Write("Here you can enter book's title: ");
+                string addedTitle = Console.ReadLine();
+                Console.Write("Here you can write book's Autor: ");
+                string addedAuthor = Console.ReadLine();
+                Console.Write("Here you can write content of thid book: ");
+                string addedContent = Console.ReadLine();
+                addedBook.bTitle.booksTitle = addedTitle;
+                addedBook.bAuthor.booksAuthor = addedAuthor;
+                addedBook.bContent.booksContent = addedContent;
+                addedBook.bTitle.Show();
+                addedBook.bAuthor.Show();
+                addedBook.bContent.Show();
+                // не получается нернуть белый цвет в консоле
+            }
 
         }
     }
@@ -35,6 +54,49 @@ namespace homeWork1
         public void AreaCulk (double side1, double side2)
         {
             area = side1*side2;
+        }
+
+    }
+    class Book
+    {
+        public Title bTitle = new Title();
+        public Author bAuthor = new Author();
+        public Content bContent = new Content();
+        
+    }
+    class Title
+    {
+        public string booksTitle { get; set; }
+        public void Show()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Book's title:");
+            Console.ForegroundColor = ConsoleColor.DarkBlue; 
+            Console.WriteLine(booksTitle);
+
+            
+        }
+    }
+    class Author
+    {
+        public string booksAuthor { get; set; }
+        public void Show()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Author's name:");
+            Console.ForegroundColor = ConsoleColor.DarkBlue; 
+            Console.WriteLine(booksAuthor);
+        }
+    }
+    class Content 
+    {
+        public string booksContent { get; set; }
+        public void Show()
+        {
+            Console.ForegroundColor = ConsoleColor.Green; 
+            Console.WriteLine("Book's content:");
+            Console.ForegroundColor = ConsoleColor.DarkBlue; 
+            Console.WriteLine(booksContent);                   
         }
     }
 }
