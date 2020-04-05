@@ -133,7 +133,7 @@ namespace homeWork1
         }
         public void manager ()
         {
-            Console.Write("Use the Internet only for its intended purpose!!! Do not forget the manifest of the programmer!");
+            Console.Write("Use the Internet only for its intended purpose!!! Do not forget the manifest of the programmer! (пока в Академии менеджеры!)");
         }
     }
 
